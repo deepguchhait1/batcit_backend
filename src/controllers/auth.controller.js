@@ -99,8 +99,7 @@ export const logout = (req, res) => {
   res.status(200).json({ success: true, message: "Logged out successfully" });
 };
 
-export const on
-board = async (req, res) => {
+export const onboard = async (req, res) => {
   try {
     const userId = req.user._id;
     const { fullName, bio, nativeLanguage, learningLanguage, location } =
