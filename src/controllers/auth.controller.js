@@ -23,14 +23,11 @@ export const signup = async (req, res) => {
         .status(400)
         .json({ message: "User with this email already exists" });
     }
-    const idx = Math.floor(Math.random() * 100 + 1);
-    const randomAvatar = `https://avatar.iran.liara.run/public/${idx}`;
 
     const newUser = await User.create({
       fullName,
       email,
       password,
-      profilePic: randomAvatar,
     });
 
     try {
