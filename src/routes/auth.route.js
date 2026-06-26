@@ -16,7 +16,11 @@ router.post("/onboarding", protectRoute, onboard);
 
 // Check user is loged in or not
 router.get("/me", protectRoute, (req, res) => {
-  res.set("Cache-Control", "no-store");
+  res.set({
+    "Cache-Control": "no-store, no-cache, must-revalidate, private",
+    Pragma: "no-cache",
+    Expires: "0",
+  });
 
   res.status(200).json({
     success: true,
